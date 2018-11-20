@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @message = Messages.all
+    @messages = Message.all
   end
 
   def incoming_sms
