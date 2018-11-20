@@ -9,8 +9,8 @@ class PagesController < ApplicationController
 
     sender_number = params["From"]
 
-    message= "Hello from Tyler at Main Street Codes."
-    
+    message= "Hello from Tyler's computer. This app would be fun to mess with people."
+
     @client = Twilio::REST::Client.new(twilio_sid, twilio_token)
     @client.messages.create(
       :from => twilio_phone_number,
