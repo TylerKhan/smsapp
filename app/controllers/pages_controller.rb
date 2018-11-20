@@ -19,6 +19,16 @@ class PagesController < ApplicationController
       message = "This is a boring text message."
     end
 
+    case incoming_message
+    when "Secret"
+      message = "Oblivion is better than Skyrimn"
+    when "Pizza"
+      message = "Do you want to order pizza?"
+    else
+      message = "How dare you send this boring message."
+
+    end
+
     @client = Twilio::REST::Client.new(twilio_sid, twilio_token)
     @client.messages.create(
       :from => twilio_phone_number,
