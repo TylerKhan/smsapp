@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     twilio_sid = ENV['TWILIO_SID']
     twilio_token = ENV['TWILIO_TOKEN']
     twilio_phone_number = ENV['TWILIO_PHONE_NUMBER']
+
+    sender_number = params["From"]
+
+    message= "Hello from Tyler at Main Street Codes."
     
     @client = Twilio::REST::Client.new(twilio_sid, twilio_token)
     @client.messages.create(
