@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
     @new_message = Message.new
     @new_message.from_number = params["From"]
-    @new_message.body = params["Body"]
+    @new_message.message_body = params["Body"]
     @new_message.from_city = params["FromCity"]
     @new_message.save
 
