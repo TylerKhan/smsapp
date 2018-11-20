@@ -1,2 +1,5 @@
 <h1>INDEX PAGE</h1>
+<% @messages.each do |message| %>
+<p><%= "#{message.from_number} texted us and said: #{message.message_body}" %></p>
 
+<%end%>
