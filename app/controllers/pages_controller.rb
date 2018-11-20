@@ -13,6 +13,14 @@ class PagesController < ApplicationController
 
     message= "Hello from Tyler's computer. This app would be fun to mess with people."
 
+    @new_message = Message.new
+    @new_message.from_number = params["From"]
+    @new_message.body = params["Body"]
+    @new_message.from_city = params["FromCity"]
+    @new_message.save
+
+
+
     if incoming_message == "secret"
       message = "Oblivion is better than Skyrim."
     else
